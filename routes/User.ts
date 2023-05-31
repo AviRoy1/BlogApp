@@ -152,6 +152,7 @@ const updateprofileSchema = joi.object().keys({
 });
 router.post(
     "/users/:userId",
+    userAuth,
     async(req,res,next) => {
         try {
             req.body = await updateprofileSchema.validateAsync(req.body);
